@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  osrm-backend:
+    image: ghcr.io/project-osrm/osrm-backend
+    container_name: osrm-backend
+    command: osrm-routed --algorithm mld /data/osm_file/norcal-latest.osrm
+    ports:
+      - "172.31.26.97:4000:5000"
+    volumes:
+      - "./:/data"
+    tty: true  # equivalent to -t
+    stdin_open: true  # equivalent to -i
