@@ -11,3 +11,4 @@ services:
       - "./:/data"
     tty: true  # equivalent to -t
     stdin_open: true  # equivalent to -i
+    restart: unless-stopped
